@@ -2,6 +2,10 @@
 
 Use esbuild to compress your Rails CSS (or JS if you want).
 
+## Why?
+
+You might find yourself with a Rails app that uses sass-rails (and sassc) gems. You may be stuck with these gems for legacy reasons. Ruby sass can't handle newer CSS syntaxes.
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
@@ -14,12 +18,13 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
+Make sure you have `esbuild` in your package.json file. If you are using Rails, escompress will look in your node_modules folder for the esbuild executable. If not using Rails, the gem will assume the executable is located at `/usr/local/bin/esbuild` on the underlying machine.
+
 ```ruby
 # in application.rb
 
 # You can specify the location of your esbuild executable.
-# The default location where escompress will look is /usr/local/bin/esbuild
-Escompress.esbuild_executable = Rails.root.join("node_modules/esbuild/bin/esbuild")
+# Escompress.esbuild_executable = Rails.root.join("some/other/path/esbuild")
 
 module MyApp
   class Application < Rails::Application
@@ -38,7 +43,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/escompress. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/escompress/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/jwilsjustin/escompress. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to be decent human beings.
 
 ## License
 
