@@ -4,7 +4,13 @@ Use esbuild to compress your Rails CSS (or JS if you want).
 
 ## Why?
 
-You might find yourself with a Rails app that uses sass-rails (and sassc) gems. You may be stuck with these gems for legacy reasons. Ruby sass can't handle newer CSS syntaxes.
+You might find yourself with a Rails app that uses sass-rails (and sassc) gems. You may be stuck with these gems for legacy reasons. But the sassc gem can't handle newer CSS syntaxes. You may see this error:
+
+```
+SassC::SyntaxError: Error: Function rgb is missing argument $green
+```
+
+More info: https://github.com/tailwindlabs/tailwindcss/discussions/6738
 
 ## Installation
 
