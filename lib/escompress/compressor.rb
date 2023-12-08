@@ -6,6 +6,12 @@ module Escompress
       @loader = loader
     end
 
+    def call(input)
+      compress(input[:data])
+    end
+
+    private
+
     def compress(input)
       cmd = "#{Escompress.esbuild_executable} --loader=#{@loader} --minify"
       output, err, status = Open3.capture3(cmd, stdin_data: input)

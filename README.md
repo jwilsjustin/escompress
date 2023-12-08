@@ -35,8 +35,8 @@ Make sure you have `esbuild` in your package.json file. If you are using Rails, 
 module MyApp
   class Application < Rails::Application
     # ... other code
-    config.assets.css_compressor = Escompress::Compressor.new(loader: :css)
-    # config.assets.js_compressor = Escompress::Compressor.new(loader: :js)
+    config.assets.css_compressor = :escompress
+    # config.assets.js_compressor = :escompress
   end
 end
 ```
