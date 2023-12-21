@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    escompress (0.3.0)
+    escompress (1.0.0)
 
 GEM
   remote: https://rubygems.org/
