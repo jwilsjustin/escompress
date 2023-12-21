@@ -18,10 +18,6 @@ Install the gem and add to the application's Gemfile by executing:
 
     $ bundle add escompress
 
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install escompress
-
 ## Usage
 
 Make sure you have `esbuild` in your package.json file. If you are using Rails, escompress will look in your node_modules folder for the esbuild executable. If not using Rails, the gem will assume the executable is located at `/usr/local/bin/esbuild` on the underlying machine.
@@ -35,8 +31,8 @@ Make sure you have `esbuild` in your package.json file. If you are using Rails, 
 module MyApp
   class Application < Rails::Application
     # ... other code
-    config.assets.css_compressor = Escompress::Compressor.new(loader: :css)
-    # config.assets.js_compressor = Escompress::Compressor.new(loader: :js)
+    config.assets.css_compressor = :escompress
+    # config.assets.js_compressor = :escompress
   end
 end
 ```
